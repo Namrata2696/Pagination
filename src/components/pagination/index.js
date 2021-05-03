@@ -18,9 +18,7 @@ function Pagination(props) {
           }
           return true;
         });
-
         var total = isInt(props.allData.length, NO_RECORDS);
-
         var totalpgs =
           total !== true
             ? parseInt(props.allData.length / NO_RECORDS) + 1
@@ -42,7 +40,6 @@ function Pagination(props) {
 
   const prevPage = () => {
     var page = currentPage - 1;
-    console.log("prev:", page);
     setCurrentPage(page);
     var data = [];
     allDatas.map((item, index) => {
@@ -69,7 +66,6 @@ function Pagination(props) {
 
   const firstPage = () => {
     var page = 1;
-    console.log("prev:", page);
     setCurrentPage(page);
     var data = [];
     allDatas.map((item, index) => {
@@ -90,7 +86,6 @@ function Pagination(props) {
       }
       return true;
     });
-    console.log("all::", allDatas, data);
     props.displayDatas(data);
   };
 
